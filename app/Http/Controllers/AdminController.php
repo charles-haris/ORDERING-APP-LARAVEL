@@ -16,6 +16,7 @@ class AdminController extends Controller
         $clients = Client::all();
         return view("admin.users.list",compact("clients"));
     }
+    //this method grants to block the client
     public function blockClient($id){
         $user = User::find($id);
         $user->block = 1;
