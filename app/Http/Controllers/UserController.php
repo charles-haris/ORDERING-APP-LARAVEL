@@ -14,10 +14,12 @@ use Illuminate\support\Facades\DB;
 
 class UserController extends Controller
 {
+//this method get all the available users
     public function getAllUsers(){
         $user = User::all();
         return view();
     }
+    
 
     public function registration(User $user,Request $request){
         $user->first_name = $request->first_name;
