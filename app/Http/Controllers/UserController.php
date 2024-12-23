@@ -19,7 +19,7 @@ class UserController extends Controller
         $user = User::all();
         return view();
     }
-//this method grants to register
+//this method grants to register user
 
     public function registration(User $user,Request $request){
         $user->first_name = $request->first_name;
