@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class  DeliverymanController extends Controller
 {
+    //this index method displays what should come on the dashboard of the deliveryman
     public function index(){
         $user = User::find(Auth::id());
         $orders = Product::where('status','=','undelivered')
@@ -27,12 +28,15 @@ class  DeliverymanController extends Controller
         return view('deliveryman.orderings_available',compact("orders","order_taken"));
     }
 
+    
+    //this method directs to the view that will allow the deliveryman to change his data
     public function update(){
         $user = User::find(Auth::id());
         $deliveryman = Deliveryman::find($user->deliveryman->id);
         return view('deliveryman.update')->with('deliveryman',$deliveryman);
     }
 
+    //this method displays the data of the deliveryman 
     public function profile(){
         $user = User::find(Auth::id());
 
