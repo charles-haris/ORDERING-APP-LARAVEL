@@ -23,27 +23,7 @@ Route::get('/', function () {
     return view('user.create');
 });
 
-Route::get('/admin/allclient',[AdminController::class,'allClient'])->name('all_client');
-Route::get('/admin/client/{id}/block',[AdminController::class,'blockClient']);
-Route::get('/admin/client/{id}/unblock',[AdminController::class,'unblockClient']);
-Route::get('/admin/client/{id}/activate',[AdminController::class,'activateClient']);
-Route::get('/admin/client/{id}/desactivate',[AdminController::class,'desactivateClient']);
-Route::get('/admin/client/{id}/update',[AdminController::class,'updateClient']);
 
-
-Route::get('/admin/alldeliveryman',[AdminController::class,"allDeliveryman"])->name('all_deliveryman');
-Route::get('/admin/deliveryman/{id}/block',[AdminController::class,'blockDeliveryman']);
-Route::get('/admin/deliveryman/{id}/unblock',[AdminController::class,'unblockDeliveryman']);
-Route::get('/admin/deliveryman/{id}/activate',[AdminController::class,'activateDeliveryman']);
-Route::get('/admin/deliveryman/{id}/desactivate',[AdminController::class,'desactivateDeliveryman']);
-Route::get('/admin/deliveryman/{id}/update',[AdminController::class,'updateDeliveryman']);
-Route::put('/admin/deliveryman/{id}/update',[AdminController::class,'handleUpdateDeliveryman']);
-
-
-Route::get('/admin/allproduct',[AdminController::class,"allProduct"])->name('all_product');
-Route::get('/admin/product/{id}/detail',[AdminController::class ,'detailProduct']);
-Route::get('/admin/product/{id}/update',[AdminController::class,'updateProduct']);
-Route::put('/admin/product/{id}/update',[AdminController::class,'handleUpdateProduct']);
 
 
 
@@ -73,6 +53,28 @@ Route::middleware(["auth"])->group(function (){
     Route::get('deliveryman/deliverOrder/{id}',[DeliverymanController::class,'deliverAnOrder']);
 
 
+
+    Route::get('/admin/allclient',[AdminController::class,'allClient'])->name('all_client');
+    Route::get('/admin/client/{id}/block',[AdminController::class,'blockClient']);
+    Route::get('/admin/client/{id}/unblock',[AdminController::class,'unblockClient']);
+    Route::get('/admin/client/{id}/activate',[AdminController::class,'activateClient']);
+    Route::get('/admin/client/{id}/desactivate',[AdminController::class,'desactivateClient']);
+    Route::get('/admin/client/{id}/update',[AdminController::class,'updateClient']);
+    
+    
+    Route::get('/admin/alldeliveryman',[AdminController::class,"allDeliveryman"])->name('all_deliveryman');
+    Route::get('/admin/deliveryman/{id}/block',[AdminController::class,'blockDeliveryman']);
+    Route::get('/admin/deliveryman/{id}/unblock',[AdminController::class,'unblockDeliveryman']);
+    Route::get('/admin/deliveryman/{id}/activate',[AdminController::class,'activateDeliveryman']);
+    Route::get('/admin/deliveryman/{id}/desactivate',[AdminController::class,'desactivateDeliveryman']);
+    Route::get('/admin/deliveryman/{id}/update',[AdminController::class,'updateDeliveryman']);
+    Route::put('/admin/deliveryman/{id}/update',[AdminController::class,'handleUpdateDeliveryman']);
+    
+    
+    Route::get('/admin/allproduct',[AdminController::class,"allProduct"])->name('all_product');
+    Route::get('/admin/product/{id}/detail',[AdminController::class ,'detailProduct']);
+    Route::get('/admin/product/{id}/update',[AdminController::class,'updateProduct']);
+    Route::put('/admin/product/{id}/update',[AdminController::class,'handleUpdateProduct']);
 });
 
 
