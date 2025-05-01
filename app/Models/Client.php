@@ -15,7 +15,7 @@ class Client extends Model
         'company','tel','address','user_id'
     ];
     use HasFactory;
-
+// relationships
     public function user():BelongsTo
     {
         return $this->belongsTo(User::class);
